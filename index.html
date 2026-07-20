@@ -23,6 +23,32 @@
 <body>
 
     <!-- ==========================================
+        INTRO SCREEN
+    ========================================== -->
+<section id="introScreen">
+
+        <div class="introContent">
+
+            <h1>Preparing something special...</h1>
+
+            <div class="introFlower">🌸</div>
+
+            <p>
+                For the best experience,<br>
+                please enjoy this with music.
+            </p>
+
+            <button id="startExperience">
+                🎵 Begin the Surprise
+            </button>
+
+            <small>Headphones recommended 🎧</small>
+
+        </div>
+
+</section>
+
+    <!-- ==========================================
          Loading Screen
     ========================================== -->
 
@@ -59,12 +85,6 @@
         <img src="/assets/flowers/baby-breath.png" class="flowerDecor bottomLeft" alt="">
 
         <img src="/assets/flowers/baby-breath.png" class="flowerDecor bottomRight" alt="">
-
-        <!-- Music -->
-
-        <button id="musicButton" aria-label="Music">
-            🎵
-        </button>
 
         <!-- Title -->
 
@@ -487,15 +507,18 @@
 
             <!-- Music -->
 
-    <audio id="homeMusic" loop>
-
+    <audio id="introMusic" preload="auto">
         <source src="/assets/music/home.mp3" type="audio/mpeg">
+    </audio>
 
+    <audio id="homeMusic" preload="auto" loop>
+        <source src="/assets/music/card.mp3" type="audio/mpeg">
     </audio>
 
     <!-- JavaScript -->
 
     <script type="module" src="/src/main.js"></script>
+    <div id="cinematicFade"></div>
 </body>
 
 </html>

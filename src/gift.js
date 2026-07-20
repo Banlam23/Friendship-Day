@@ -1,19 +1,45 @@
+import { switchToHomeMusic } from "./music.js";
 export function initGift() {
-
+    const cinematicFade = document.getElementById("cinematicFade");
     const giftBox = document.getElementById("giftBox");
+    const doracake = document.querySelector(".doracakeGift");
+
+    if (!giftBox || !doracake || !cinematicFade) return;
+    doracake.addEventListener("click", () => {
+
+    if (doracake.classList.contains("clicked")) return;
+
+    doracake.classList.add("clicked");
+
+    cinematicFade.style.opacity = "0.35";
+
+    setTimeout(() => {
+        cinematicFade.style.opacity = "0";
+    }, 300);
+
+    switchToHomeMusic(2000);
+
+});
 
     if (!giftBox) return;
 
     giftBox.addEventListener("click", () => {
 
-        // Prevent clicking twice
-        if (giftBox.classList.contains("opened")) return;
+    if (giftBox.classList.contains("opened")) return;
 
-        giftBox.classList.add("opened");
+    giftBox.classList.add("opened");
 
-        document
+    // Cinematic fade
+    cinematicFade.style.opacity = "0.35";
+
+    setTimeout(() => {
+        cinematicFade.style.opacity = "0";
+    }, 300);
+
+    document
         .querySelector(".giftClick")
         .classList.add("hide");
+
         // Gift box disappears
         setTimeout(() => {
             document.querySelector(".giftBouquet").classList.add("show");

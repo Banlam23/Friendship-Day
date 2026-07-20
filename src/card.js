@@ -8,6 +8,7 @@ export function initCard() {
     cover.addEventListener("click", () => {
 
         cover.classList.add("opened");
+        
 
         setTimeout(() => {
 
