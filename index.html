@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Friendship Day</title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style/style.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         Loading Screen
+    ========================================== -->
+
+    <div id="loading">
+
+        <div class="loading-box">
+
+            <h1>Preparing something special...</h1>
+
+            <div class="loading-flower">&#x1F4AE;</div>
+
+            <div class="loader-bar">
+
+                <div class="loader-fill"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         Homepage
+    ========================================== -->
+
+    <section id="home">
+
+        <!-- Decorations -->
+
+        <img src="/assets/flowers/baby-breath.png" class="flowerDecor topLeft" alt="">
+
+        <img src="/assets/flowers/baby-breath.png" class="flowerDecor topRight" alt="">
+
+        <img src="/assets/flowers/baby-breath.png" class="flowerDecor bottomLeft" alt="">
+
+        <img src="/assets/flowers/baby-breath.png" class="flowerDecor bottomRight" alt="">
+
+        <!-- Music -->
+
+        <button id="musicButton" aria-label="Music">
+            🎵
+        </button>
+
+        <!-- Title -->
+
+        <header class="title">
+
+            <h1>A Personal Friendship Card</h1>
+
+            <h2><i>For Fydu</i></h2>
+
+            <p>by Banlam</p>
+
+        </header>
+
+
+        <!-- Characters -->
+
+        <div id="characters">
+
+            <div id="doraemon" class="character"></div>
+
+            <div id="nobita" class="character"></div>
+
+            <div id="tom" class="character"></div>
+
+            <div id="jerry" class="character"></div>
+
+            <div id="shinchan" class="character"></div>
+
+        </div>
+
+        <!-- Spotlight -->
+
+        <div id="spotlight"></div>
+
+        <!-- ==========================================
+             Envelope
+        ========================================== -->
+
+        <div id="envelopeContainer">
+
+            <div id="envelope">
+
+                <!-- Back -->
+
+                <div class="envelope-back"></div>
+
+                <!-- Letter -->
+
+                <div class="letter">
+
+                    <div class="letter-title">
+
+                        <span>&#x1F337;</span>
+
+                        <h3>For Fydu</h3>
+
+                        <p>Click to open</p>
+
+                    </div>
+
+                </div>
+
+                <!-- Left Fold -->
+
+                <div class="left-fold"></div>
+
+                <!-- Right Fold -->
+
+                <div class="right-fold"></div>
+
+                <!-- Bottom Fold -->
+
+                <div class="bottom-fold"></div>
+
+                <!-- Top Flap -->
+
+                <div class="top-flap"></div>
+
+                <!-- Wax Seal -->
+
+                <div class="seal">
+
+                    ❤
+
+                </div>
+
+            </div>
+
+            <p class="openText">
+
+                Open Me
+
+            </p>
+
+        </div>
+
+        <!-- Doracake -->
+
+        <div id="doracake">
+
+            <img src="/assets/decorations/doracake.png" alt="Doracake">
+
+        </div>
+
+        <!-- Doracake Message -->
+
+        <div id="doracakeHint">
+             Click the Doracake for another surprise... ↓✨
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+            SECRET GIFT PAGE
+========================================== -->
+
+            <section id="giftPage">
+                <div class="giftContainer">
+                    <h1 class="giftHeading">
+                        One More Surprise
+                    </h1>
+                    <p class="giftSubHeading">
+                        I wish I could have given you a real gift... So instead, please accept this little digital gift. I hope it makes you smile.
+                    </p>
+                     <!-- Gift Box -->
+                      <div class="giftBox" id="giftBox">
+                        <!-- Bouquet -->
+                        <img
+                            src="/assets/gifts/bouquet.png"
+                            class="giftBouquet"
+                            alt="Bouquet"
+                        >
+                        <img
+                        src="/assets/gifts/gift-box.png"
+                        class="giftBoxImage"
+                        alt="Gift Box"
+                        >
+                        <div class="giftItems">
+                            <img
+                                src="/assets/gifts/chocolate.png"
+                                class="giftItem chocolate"
+                                alt="Chocolate"
+                            >
+
+                            <img
+                                src="/assets/gifts/chocopie.png"
+                                class="giftItem chocopie"
+                                alt="Chocopie"
+                            >
+
+                            <img
+                                src="/assets/gifts/teddy-bear.png"
+                                class="giftItem doracakeGift"
+                                alt="Doracake"
+                            >
+
+                            <img
+                                src="/assets/gifts/white-rose.png"
+                                class="giftItem flowerGift"
+                                alt="Flower"
+                            >
+
+                            <div class="giftNote">
+
+                                <p>
+                                    <i>Dear Fydu,</i><br><br>
+                                    I hope this little surprise
+                                    made you smile.<br><br>
+                                    Happy Friendship Day!
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                 </div>
+
+        <p class="giftClick">
+            Click to Open
+        </p>
+
+        <div class="pageNavigation">
+
+            <button class="backGiftBtn">
+
+                ← Homepage
+
+            </button>
+
+        </div>
+
+    </div>
+
+            </section>
+
+
+        <!-- ==========================================
+            FRIENDSHIP CARD
+        ========================================== -->
+
+<section id="friendshipCard">
+
+    <div class="cardScene">
+
+        <div class="friendshipCard">
+
+            <!-- =========================
+                 CARD COVER
+            ========================== -->
+
+            <div class="cardCover">
+
+                <div class="coverPhoto">
+
+                    <div class="polaroid">
+
+                        <!-- Tape -->
+
+                        <div class="polaroidTape"></div>
+
+                        <!-- Placeholder -->
+
+                        <div class="photoPlaceholder">
+                            <img
+                                src="/assets/photos/mi.jpg"
+                                alt="photo"
+                            >
+                        </div>
+
+                        <!-- Caption -->
+
+                        <div class="polaroidCaption">
+
+                            Happy Friendship Day to my Best Friend...
+
+                        </div>
+
+                    </div>
+
+                    <!-- Baby's Breath -->
+
+                    <img
+                        src="/assets/flowers/baby-breath.png"
+                        class="coverFlowerDecoration"
+                        alt="Baby's Breath"
+                    >
+
+                </div>
+
+                <h1>A Letter For My Friend</h1>
+
+                <h2>Fydu</h2>
+
+                <p>Friendship Day 2026</p>
+                <h2 class="cap"><i>Tap to open the cover..</i></h2>
+
+            </div>
+
+            <!-- =========================
+                 INSIDE PAGES
+            ========================== -->
+            <div class="book"> 
+                <div class="cardInside" id="letterPage">
+                    <div class="pageSpread">
+                        <div class="leftPage">
+
+                            <div class="pageContent">
+                                    <p class="letterGreeting">
+                                        Dear Fydu,
+                                    </p>
+
+                                    <div class="letterLine"></div>
+
+                                    <p class="letterBody">
+                                        Thank you for being the greatest best friend I could ever ask for. I'm so thankful to God that our paths crossed. I'm really glad God decided to bless me with you.<br> And honestly I don't know what I'd do without you</I>
+                                    </p>
+
+                                    <div class="verseSection">
+                                        <div class="divider"></div>
+
+                                        <p class="verse">
+
+                                            "As iron sharpens iron, so one person sharpens another."
+
+                                        </p>
+
+                                        <p class="reference">
+                                            Proverb 27:17
+                                        </p>
+                                        
+                                        <p class="verse2">
+
+                                            "Greater love has no one than this: to lay down one's life for one's friend."
+
+                                        </p>
+
+                                        <p class="reference">
+                                            John 15:13
+                                        </p>
+                                    </div>
+                                    <p class="scroll">(scroll to the right for next page)</p>
+                            </div>
+                        </div>
+
+                        <div class="rightPage" id="rightLetterPage">
+                        <div class="pageContent poemPage">
+                            <h2 class="poemTitle">
+                               A Poem For You
+                            </h2>
+
+                            <p class="poemBody">
+
+                                Some friendships bloom
+                                like little flowers,<br>
+
+                                Quietly,
+                                gently,
+                                and without asking for attention.<br>
+
+                                Yet somehow,
+                                they make every ordinary day
+                                a little brighter.<br>
+
+                                Thank you
+                                for being one of mine.<br>
+
+                            </p>
+
+                            <div class="poemSignature">
+                                <p>With Love,</p>
+                                <h3><b>Banlam</b></h3>
+                            </div>
+                            <div class="pageNavigation" id="letterNav">
+                                <button class="backPageBtn">
+                                    ← Back
+                                </button>
+                                        <button class="nextPageBtn">
+                                            Next Page →
+                                        </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <!-- ==========================================
+                                        MEMORY SPREAD
+                        ========================================== -->
+                        <div class="memorySpread cardInside" id="memoryPage">
+                            <div class="memoryPage">
+                                <h2>Our Memories🤭</h2>
+                                <p><i>Before you leave... There's still one last surprise <br>waiting for you back on the homepage.</i></p>
+                                <div class="memoryBoard">
+                                    <div class="memoryPolaroid one">
+                                        <div class="memoryTape"></div>
+                                        <div class="memoryPhoto">
+                                            <img
+                                                src="/assets/photos/together.jpg"
+                                                alt="Memory"
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="memoryPolaroid two">
+                                        <div class="memoryTape"></div>
+                                        <div class="memoryPhoto">
+                                            <img
+                                                src="/assets/photos/together5.jpeg"
+                                                alt="Memory"
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="memoryPolaroid three">
+                                        <div class="memoryTape"></div>
+                                        <div class="memoryPhoto">
+                                            <img
+                                                src="/assets/photos/together4.jpeg"
+                                                alt="Memory"
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="memoryPolaroid four">
+                                        <div class="memoryTape"></div>
+                                        <div class="memoryPhoto">
+                                            <img
+                                                src="/assets/photos/together3.jpeg"
+                                                alt="Memory"
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="memoryPolaroid five">
+                                        <div class="memoryTape"></div>
+                                        <div class="memoryPhoto">
+                                            <img
+                                                src="/assets/photos/together2.jpg"
+                                                alt="Memory"
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                    <img src="/assets/flowers/baby-breath.png" class="memoryFlower" alt="">
+                               
+                                <div class="memoryNavigation">
+                                    <button class="backPageBtn">
+                                        ← Back
+                                    </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+            <!-- Music -->
+
+    <audio id="homeMusic" loop>
+
+        <source src="/assets/music/home.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <!-- JavaScript -->
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

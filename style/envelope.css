@@ -1,0 +1,665 @@
+/* ==========================================
+   ENVELOPE CONTAINER
+========================================== */
+
+#envelopeContainer{
+    position:relative;
+    top: 150px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100%;
+    z-index:10;
+    user-select:none;
+}
+
+#envelope{
+
+    position:relative;
+    width:480px;
+    height:320px;
+    cursor:pointer;
+    transform-style:preserve-3d;
+    perspective:1400px;
+    animation:floatEnvelope 5s ease-in-out infinite;
+}
+
+/* ==========================================
+   ENVELOPE BACK
+========================================== */
+
+.envelope-back{
+
+    position:absolute;
+    inset:0;
+    border-radius:14px;
+    background:
+    linear-gradient(
+        180deg,
+        #F8EAD8 0%,
+        #F1DFC9 100%
+    );
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.10);
+
+    overflow:hidden;
+
+}
+
+/* subtle paper texture */
+
+.envelope-back::after{
+
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.08;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0px,
+            transparent 5px,
+            rgba(255,255,255,.45) 6px,
+            transparent 7px
+        );
+
+}
+
+/* ==========================================
+   LETTER
+========================================== */
+
+.letter{
+
+    opacity: 0;
+    pointer-events: none;
+    position:absolute;
+    left:50%;
+    top:18px;
+    transform:
+    translateX(-50%)
+    translateY(-160px);
+    width:78%;
+    height:80%;
+    border-radius:10px;
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF,
+            #FFF9F2
+        );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:3;
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+    will-change:transform;
+    cursor:pointer;
+    transition:
+        transform .8s ease,
+        box-shadow .3s ease;
+}
+
+/* ==========================================
+   LETTER CONTENT
+========================================== */
+
+.letter-title{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:var(--primary);
+
+}
+
+.letter-title span{
+
+    font-size:28px;
+}
+
+.letter-title h3{
+
+    margin-top:10px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:42px;
+}
+
+.letter-title p{
+
+    margin-top:10px;
+    font-size:16px;
+    color:#8F8F8F;
+    letter-spacing:1px;
+}
+
+/* ==========================================
+   LEFT FOLD
+========================================== */
+
+.left-fold{
+
+    position:absolute;
+    left:0;
+    top:0;
+    width:50%;
+    height:100%;
+    background:
+    linear-gradient(
+        90deg,
+        #E7D3B7,
+        #E2CCAF
+    );
+
+    clip-path:
+    polygon(
+        0 0,
+        100% 50%,
+        0 100%
+    );
+
+    z-index:4;
+
+}
+
+/* ==========================================
+   RIGHT FOLD
+========================================== */
+
+.right-fold{
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:50%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        270deg,
+        #E7D3B7,
+        #E2CCAF
+    );
+
+    clip-path:
+    polygon(
+        100% 0,
+        0 50%,
+        100% 100%
+    );
+
+    z-index:4;
+
+}
+
+/* ==========================================
+   BOTTOM FOLD
+========================================== */
+
+.bottom-fold{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:58%;
+
+    background:
+    linear-gradient(
+        180deg,
+        #F1DFC8,
+        #E7D2B5
+    );
+
+    clip-path:
+    polygon(
+        0 100%,
+        50% 0,
+        100% 100%
+    );
+
+    z-index:5;
+
+}
+
+/* Fold highlight */
+
+.bottom-fold::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:8%;
+
+    width:2px;
+    height:88%;
+
+    transform:translateX(-50%);
+
+    background:rgba(255,255,255,.28);
+
+}
+
+/* ==========================================
+   TOP FLAP
+========================================== */
+
+.top-flap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:170px;
+
+    background:linear-gradient(
+        180deg,
+        #F6E6D2,
+        #ECD8BF
+    );
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:50% 0%;
+
+    transform:rotate(0deg);
+
+    transition:transform .8s ease;
+
+    z-index:10;
+
+}
+/* soft fold shadow */
+
+.top-flap::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.35),
+        transparent 65%
+    );
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   WAX SEAL
+========================================== */
+
+.seal{
+
+    position:absolute;
+    left:50%;
+    top:95px;
+    transform:translateX(-50%);
+    width:58px;
+    height:58px;
+    border-radius:48% 52% 50% 49%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:20px;
+    background:
+    radial-gradient(
+        circle at 35% 35%,
+        #D96A79,
+        #B63D4F 65%
+    );
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.18),
+        inset 0 2px 2px rgba(255,255,255,.28);
+
+    z-index:20;
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+}
+
+/* little shine */
+
+.seal::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:14px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    top:10px;
+    left:12px;
+
+    transform:rotate(-25deg);
+
+}
+
+/* ==========================================
+   OPEN TEXT
+========================================== */
+
+.openText{
+
+    margin-top:28px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:34px;
+
+    color:var(--primary);
+
+    letter-spacing:1px;
+
+    animation:openGlow 2.5s ease-in-out infinite;
+
+}
+
+/* ==========================================
+   HOVER EFFECTS
+========================================== */
+
+#envelope:hover{
+
+    transform:
+        translateY(-6px);
+
+}
+
+#envelope:hover .seal{
+
+    box-shadow:
+        0 6px 18px rgba(182,61,79,.35);
+
+}
+
+#envelope:hover .letter{
+
+    transform:
+        translateX(-50%)
+        translateY(-10px);
+
+}
+
+#envelope:hover .openText{
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================================
+   OPEN STATE
+========================================== */
+
+#envelope.open .top-flap{
+
+    z-index: 50;
+    transform:
+        rotateX(180deg);
+        animation: flapOpen .8s forwards;
+
+}
+
+.top-flap.behind{
+
+    z-index:1;
+
+}
+
+.seal.hidden{
+
+    opacity:0;
+
+    transform:
+        translateX(-50%)
+        translateY(35px)
+        scale(.6);
+
+}
+
+#envelope.open .seal{
+
+    transform:
+        translateX(-50%)
+        translateY(35px)
+        scale(.6);
+
+    opacity:0;
+
+    transition:
+        transform .4s ease .25s,
+        opacity .4s ease .25s;
+
+}
+
+#envelope.open .letter{
+    opacity: 1;
+    pointer-events: auto;
+    transform:
+        translateX(-50%)
+        translateY(-175px);
+
+}
+
+/* ==========================================
+   CURSOR
+========================================== */
+
+#envelope,
+.seal{
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+/* ==========================================
+            TABLET
+========================================== */
+
+@media (max-width:992px){
+
+    #envelopeContainer{
+
+        top:110px;
+
+    }
+
+    #envelope{
+
+        width:390px;
+        height:260px;
+
+    }
+
+    .letter{
+
+        width:82%;
+        height:82%;
+
+    }
+
+    .letter-title h3{
+
+        font-size:36px;
+
+    }
+
+    .letter-title p{
+
+        font-size:15px;
+
+    }
+
+    .openText{
+
+        margin-top:24px;
+
+        font-size:28px;
+
+    }
+
+}
+
+/* ==========================================
+            MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    #envelopeContainer{
+
+        top:90px;
+
+        padding:0 20px;
+
+    }
+
+    #envelope{
+
+        width:310px;
+        height:210px;
+
+    }
+
+    .top-flap{
+
+        height:110px;
+
+    }
+
+    .seal{
+
+        width:46px;
+        height:46px;
+
+        top:70px;
+
+        font-size:16px;
+
+    }
+
+    .letter{
+
+        width:84%;
+        height:80%;
+
+    }
+
+    .letter-title span{
+
+        font-size:20px;
+
+    }
+
+    .letter-title h3{
+
+        font-size:28px;
+
+    }
+
+    .letter-title p{
+
+        font-size:13px;
+
+    }
+
+    .openText{
+
+        margin-top:18px;
+
+        font-size:22px;
+
+    }
+
+    #envelope.open .letter{
+
+        transform:
+            translateX(-50%)
+            translateY(-120px);
+
+    }
+
+}
+@keyframes flapOpen{
+
+    0%{
+
+        z-index:10;
+
+    }
+
+    99%{
+
+        z-index:10;
+
+    }
+
+    100%{
+
+        z-index:1;
+
+    }
+
+}
+@keyframes letterFloat{
+
+    0%{
+        transform: translateX(-50%) translateY(-175px);
+    }
+
+    50%{
+        transform: translateX(-50%) translateY(-181px);
+    }
+
+    100%{
+        transform: translateX(-50%) translateY(-175px);
+    }
+
+}
+#envelope.open .letter{
+
+    animation:
+        letterFloat 2.5s ease-in-out .5s infinite;
+
+}
+#envelope.open .letter:hover{
+
+    transform:
+        translateX(-50%)
+        translateY(-178px)
+        scale(1.02);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.18);
+
+}

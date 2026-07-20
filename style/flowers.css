@@ -1,0 +1,69 @@
+/* ==========================================
+   BABY'S BREATH DECORATIONS
+========================================== */
+
+.flowerDecor{
+
+    position:absolute;
+
+    width:115px;
+
+    opacity:.18;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    z-index:1;
+
+    animation:flowerFloat 7s ease-in-out infinite;
+
+}
+
+/* Top Left */
+
+.topLeft{
+
+    --rotate:-15deg;
+
+    top:35px;
+
+    left:35px;
+
+}
+
+/* Top Right */
+
+.topRight{
+
+    --rotate:15deg;
+
+    top:35px;
+
+    right:35px;
+
+}
+
+/* Bottom Left */
+
+.bottomLeft{
+
+    --rotate:180deg;
+
+    bottom:35px;
+
+    left:35px;
+
+}
+
+/* Bottom Right */
+
+.bottomRight{
+
+    --rotate:180deg;
+
+    bottom:35px;
+
+    right:35px;
+
+}

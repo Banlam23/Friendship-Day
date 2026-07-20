@@ -1,0 +1,116 @@
+/* ==========================================
+   LOADING SCREEN
+========================================== */
+
+#loading{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        180deg,
+        var(--bg-main),
+        var(--bg-secondary)
+    );
+
+    z-index:9999;
+
+    transition:opacity .8s ease,
+               visibility .8s ease;
+
+}
+
+#loading.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+/* ==========================================
+   LOADING BOX
+========================================== */
+
+.loading-box{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.loading-box h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:48px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================
+   FLOWER
+========================================== */
+
+.loading-flower{
+
+    font-size:54px;
+
+    margin-bottom:24px;
+
+    animation:flowerLoading 2s ease-in-out infinite;
+
+}
+
+/* ==========================================
+   LOADER BAR
+========================================== */
+
+.loader-bar{
+
+    width:260px;
+    height:8px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    background:#E6D7C3;
+
+}
+
+.loader-fill{
+
+    width:0%;
+    height:100%;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        #C79B6A,
+        #B88452
+    );
+
+    animation:loadingBar 2.5s linear forwards;
+
+}
+
+@keyframes loadingBar{
+    from{
+        width:0%;
+    }
+    to{
+        width:100%;
+    }
+}

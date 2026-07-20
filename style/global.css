@@ -1,0 +1,119 @@
+/* ==========================================
+   GLOBAL RESET
+========================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================================
+   ROOT VARIABLES
+========================================== */
+
+:root{
+
+    --bg-main:#FFFDFB;
+    --bg-secondary:#FAF4EB;
+
+    --paper:#FFFDF8;
+    --envelope:#F4E4CF;
+    --envelope-dark:#E8D3B7;
+
+    --primary:#6B4B33;
+    --secondary:#BD9365;
+
+    --shadow:rgba(0,0,0,.12);
+
+    --transition:.35s ease;
+
+}
+
+/* ==========================================
+   HTML
+========================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--bg-main),
+            var(--bg-secondary)
+        );
+
+    color:var(--primary);
+
+}
+@media (max-width:768px){
+
+    body{
+
+        overflow-y:auto;
+
+        overflow-x:hidden;
+
+    }
+
+}
+
+/* ==========================================
+   IMAGES
+========================================== */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button{
+
+    font-family:inherit;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}

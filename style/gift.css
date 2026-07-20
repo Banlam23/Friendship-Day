@@ -1,0 +1,555 @@
+/* ==========================================
+                GIFT PAGE
+========================================== */
+
+#giftPage{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #FFF9F3,
+        #F7EFE6
+    );
+
+    overflow-y:auto;
+
+    z-index:999;
+
+}
+
+/* ==========================================
+            MAIN CONTAINER
+========================================== */
+
+.giftContainer{
+
+    width:900px;
+    max-width:90%;
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+
+    text-align:center;
+
+    padding-top:40px;
+
+}
+
+/* ==========================================
+                HEADING
+========================================== */
+
+.giftHeading{
+
+    margin:0;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:4rem;
+
+    color:#7A5636;
+
+}
+
+.giftSubHeading{
+
+    margin-top:12px;
+    margin-bottom:90px;
+
+    color:#8A6C52;
+
+    font-size:1.15rem;
+
+}
+
+/* ==========================================
+                GIFT BOX
+========================================== */
+
+.giftBox{
+
+    position:relative;
+
+    width:260px;
+    height:260px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/* ==========================================
+            BOUQUET
+========================================== */
+
+.giftBouquet{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:400px;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.25);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+.giftBouquet.show{
+
+    opacity:1;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+}
+
+/* ==========================================
+            GIFT IMAGE
+========================================== */
+
+.giftBoxImage{
+
+    position:relative;
+
+    width:220px;
+
+    z-index:5;
+
+    cursor:pointer;
+
+    animation:giftFloat 2.6s ease-in-out infinite;
+
+    transition:
+        transform .3s;
+
+}
+
+.giftBoxImage:hover{
+
+    transform:scale(1.05);
+
+}
+
+@keyframes giftFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+/* ==========================================
+            GIFT ITEMS
+========================================== */
+
+.giftItems{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+/* Everything hidden at first */
+
+.giftItem,
+.giftNote{
+
+    position:absolute;
+
+    opacity:0;
+
+    transform:scale(.6);
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+
+}
+
+/* Show after JavaScript adds .show */
+
+.giftItem.show,
+.giftNote.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* ==========================================
+                CHOCOLATE
+========================================== */
+
+.chocolate{
+
+    width:140px;
+
+    top:70px;
+    left:-170px;
+
+}
+
+/* ==========================================
+                CHOCOPIE
+========================================== */
+
+.chocopie{
+
+    width:130px;
+    top:70px;
+    right:-150px;
+
+}
+
+/* ==========================================
+                DORACAKE
+========================================== */
+
+.doracakeGift{
+
+    position:absolute;
+
+    width:130px;
+
+    left:50%;
+    top:280px;
+
+    transform:translateX(-50%) scale(.6);
+
+    z-index:20;
+
+}
+
+.doracakeGift.show{
+
+    transform:translateX(-50%) scale(1);
+
+}
+
+.doracakeGift.show{
+
+    transform:translateX(-50%) scale(1);
+
+}
+
+/* ==========================================
+            BABY BREATH
+========================================== */
+
+.flowerGift{
+
+    width:85px;
+    left:-70px;
+    top:250px;
+    z-index:5;
+
+}
+
+/* ==========================================
+                NOTE
+========================================== */
+
+.giftNote{
+
+    position:absolute;
+
+    width:230px;
+
+    right:-250px;
+
+    top:200px;
+
+    padding:22px;
+
+    border-radius:22px;
+
+    background:#FFFDFB;
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.12);
+
+    text-align:center;
+
+    color:#6D4C35;
+
+    line-height:1.7;
+
+    z-index:15;
+
+}
+
+.giftClick{
+
+    margin-top:35px;
+
+    font-size:20px;
+
+    color:#8A6C52;
+
+    font-style:italic;
+
+    transition:
+        opacity .5s,
+        transform .5s;
+
+}
+
+.giftClick.hide{
+
+    opacity:0;
+
+    transform:translateY(-15px);
+
+}
+.pageNavigation{
+
+    margin-top:220px;
+
+}
+
+.backGiftBtn{
+
+    padding:14px 32px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#C89252;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.backGiftBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+/* ==========================================
+            OPEN ANIMATION
+========================================== */
+
+.giftBox.opened .giftBoxImage{
+
+    animation:giftOpen .8s forwards;
+
+}
+
+@keyframes giftOpen{
+
+    0%{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+    30%{
+
+        transform:
+            translateY(-15px)
+            scale(1.05);
+
+    }
+
+    100%{
+
+        opacity:0;
+        transform:scale(.2);
+
+        pointer-events:none;
+
+    }
+
+}
+/* ==========================================
+            MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    #giftPage{
+        align-items:flex-start;
+    }
+
+    .giftContainer{
+
+        width:100%;
+        max-width:100%;
+
+        padding:30px 20px 60px;
+
+        min-height:auto;
+
+    }
+
+    .giftHeading{
+
+        font-size:2.4rem;
+
+    }
+
+    .giftSubHeading{
+
+        font-size:.95rem;
+
+        line-height:1.6;
+
+        margin-bottom:45px;
+
+        max-width:340px;
+
+    }
+
+    .giftBox{
+
+        width:170px;
+        height:170px;
+
+    }
+
+    .giftBoxImage{
+
+        width:150px;
+
+    }
+
+    .giftBouquet{
+
+        width:260px;
+
+    }
+
+    .chocolate{
+
+        width:90px;
+
+        top:55px;
+        left:-90px;
+
+    }
+
+    .chocopie{
+
+        width:90px;
+
+        top:55px;
+        right:-90px;
+
+    }
+
+    .doracakeGift{
+
+        width:90px;
+
+        top:185px;
+
+    }
+
+    .flowerGift{
+
+        width:55px;
+
+        left:-25px;
+
+        top:175px;
+
+    }
+
+    .giftNote{
+
+        width:170px;
+
+        right:-95px;
+
+        top:145px;
+
+        padding:15px;
+
+        font-size:13px;
+
+        line-height:1.5;
+
+    }
+
+    .giftClick{
+
+        margin-top:25px;
+
+        font-size:16px;
+
+    }
+
+    .pageNavigation{
+
+        margin-top:170px;
+
+    }
+
+    .backGiftBtn{
+
+        padding:12px 24px;
+
+        font-size:14px;
+
+    }
+.doracakeGift{
+    left:29%;
+}
+.flowerGift{
+    top:75%;
+    left:-28%;
+}
+.chocolate{
+    top:10% ;
+}
+.chocopie{
+    top:10%;
+}
+}

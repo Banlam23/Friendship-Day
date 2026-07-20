@@ -1,0 +1,942 @@
+/* ==========================================
+   FRIENDSHIP CARD
+========================================== */
+.scroll{
+    display: none;
+}
+#friendshipCard{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#FBF5EE;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+
+    z-index:100;
+    
+}
+
+#friendshipCard.show{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+/* ==========================================
+   CARD SCENE
+========================================== */
+
+.cardScene{
+
+    width:min(800px,90vw);
+    aspect-ratio:4/5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:2500px;
+}
+
+/* ==========================================
+   FRIENDSHIP CARD
+========================================== */
+
+.friendshipCard{
+    position:relative;
+    width:800px;
+    height:920px;
+
+}
+
+/* ==========================================
+   BOOK
+========================================== */
+
+.book{
+
+    position:absolute;
+    inset:0;
+    border-radius:18px;
+    overflow:visible;
+
+}
+
+/* ==========================================
+   CARD COVER
+========================================== */
+
+.cardCover{
+    position:absolute;
+    inset:0;
+    z-index:5;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    cursor:pointer;
+    overflow:hidden;
+    border-radius:18px;
+    background:
+        linear-gradient(
+            145deg,
+            #F8EADB,
+            #F2DFC8
+        );
+
+    border:2px solid rgba(184,138,91,.18);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.18);
+    transform-origin:left center;
+    transform-style:preserve-3d;
+    backface-visibility:hidden;
+    transition:
+        transform 1.3s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.cardCover.opened{
+    transform:rotateY(-180deg);
+}
+
+.cardCover.hidden{
+    opacity:0;
+    visibility: hidden;
+    pointer-events:none;
+}
+/* ==========================================
+   COVER PHOTO
+========================================== */
+
+.coverPhoto{
+    position:relative;
+    transform:translateY(-35px);
+    margin-bottom:12px;
+}
+
+/* ==========================================
+   POLAROID
+========================================== */
+
+.polaroid{
+    position:relative;
+    width:250px;
+    background:#FFF;
+    padding:14px 14px 48px;
+    border-radius:4px;
+    transform:rotate(-5deg);
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.18),
+        0 8px 12px rgba(0,0,0,.08);
+    transition:
+        transform .35s ease;
+
+}
+
+.polaroid:hover{
+    transform:
+        rotate(-4deg)
+        translateY(-5px);
+
+}
+
+.photoPlaceholder{
+
+    width:100%;
+
+    aspect-ratio:0.8;
+
+    overflow:hidden;
+
+    border-radius:2px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F6F3EE,
+            #ECE7DF
+        );
+
+    position:relative;
+
+}
+.photoPlaceholder img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 38%;
+    transform:scale(.9);
+}
+
+.photoPlaceholder::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            130deg,
+            transparent,
+            rgba(255,255,255,.28),
+            transparent
+        );
+
+}
+
+.polaroidTape{
+
+    position:absolute;
+
+    left:50%;
+    top:-12px;
+
+    width:90px;
+    height:28px;
+
+    transform:
+        translateX(-50%)
+        rotate(3deg);
+
+    background:
+        rgba(248,238,202,.72);
+
+    border:
+        1px solid rgba(255,255,255,.4);
+
+    backdrop-filter:blur(2px);
+
+    box-shadow:
+        0 3px 6px rgba(0,0,0,.08);
+
+}
+
+.polaroidCaption{
+
+    margin-top:16px;
+
+    text-align:center;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:16px;
+
+    font-style:italic;
+
+    color:#8E7A67;
+
+}
+
+.coverFlowerDecoration{
+
+    position:absolute;
+
+    width:110px;
+
+    top:18px;
+    right:-18px;
+
+    transform:rotate(18deg);
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+/* ==========================================
+   COVER TEXT
+========================================== */
+
+.cardCover h1{
+
+    max-width:520px;
+
+    margin-bottom:18px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:60px;
+
+    line-height:1.15;
+
+    color:#6B4B33;
+
+}
+
+.cardCover h2{
+
+    margin-bottom:16px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:50px;
+
+    font-style:italic;
+
+    color:#B88A5B;
+
+}
+.cardCover .cap{
+    color:rgba(37, 68, 19, 0.726);
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.cardCover p{
+
+    font-size:22px;
+
+    color:#9D8D7C;
+
+}
+/* ==========================================
+   INSIDE PAGE
+========================================== */
+
+.cardInside{
+
+    position:absolute;
+    inset:0;
+    display:none;
+    background:#FFFCF8;
+    border-radius:18px;
+    overflow:hidden;
+
+}
+#letterPage{
+    display:none;
+}
+
+.friendshipCard.opened #letterPage{
+    display:flex;
+}
+
+
+
+/* ==========================================
+   CENTER FOLD
+========================================== */
+
+.cardInside::before{
+
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:14px;
+    height:100%;
+    pointer-events:none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.05),
+            rgba(255,255,255,.35) 40%,
+            rgba(255,255,255,.35) 60%,
+            rgba(0,0,0,.05)
+        );
+    opacity:.18;
+}
+
+
+.friendshipCard.opened #letterPage{
+
+    display:flex;
+
+}
+
+/* ==========================================
+   PAGE SPREAD
+========================================== */
+
+.pageSpread{
+    display:flex;
+    width:100%;
+    height:100%;
+}
+
+/* ==========================================
+   LEFT PAGE
+========================================== */
+
+.leftPage{
+    flex:1;
+    position:relative;
+    background:#FFFBF7;
+    padding:45px 35px;
+    box-shadow:
+        inset -18px 0 30px rgba(0,0,0,.04);
+}
+
+/* ==========================================
+   RIGHT PAGE
+========================================== */
+
+.rightPage{
+    flex:1;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    box-shadow:
+        inset 18px 0 30px rgba(0,0,0,.035);
+}
+
+.leftPage, .rightPage{
+    min-width:0;
+}
+
+/* ==========================================
+   PAGE CONTENT
+========================================== */
+
+.leftPage .pageContent{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+.rightPage .pageContent{
+    width:120%;
+    height:100%;
+    padding:45px 35px 35px 35px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================================
+   PAGE CORNERS
+========================================== */
+
+.leftPage::before,
+.rightPage::before{
+    content:"";
+    position:absolute;
+    top:24px;
+    left:24px;
+    width:60px;
+    height:60px;
+    border-top:1px solid rgba(184,138,91,.18);
+    border-left:1px solid rgba(184,138,91,.18);
+}
+
+/* ==========================================
+   LETTER
+========================================== */
+
+.letterGreeting{
+    font-family:"Cormorant Garamond",serif;
+    font-size:38px;
+    color:#6B4B33;
+}
+
+.letterLine{
+    width:120px;
+    height:1px;
+    margin-bottom:25px;
+    background:
+        linear-gradient(
+            90deg,
+            #D7C3A7,
+            transparent
+        );
+}
+
+.letterBody{
+    font-family: Baskerville;
+    font-style: italic;
+    width:100%;
+    margin-top:18px;
+    font-size:19px;
+    line-height:1.85;
+    text-align:left;
+    color:#655A4F;
+    margin-bottom: 120px;
+}
+
+.letterFooter{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    margin-top:25px;
+}
+
+.letterClosing{
+    margin-bottom:8px;
+    font-style:italic;
+    color:#8A735D;
+}
+
+.letterSignature{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    color:#6B4B33;
+}
+
+.letterFlower{
+    margin-top:5px;
+    font-size:18px;
+    opacity:.75;
+}
+
+/* ==========================================
+   VERSE
+========================================== */
+
+.divider{
+    width:120px;
+    height:1px;
+    margin:15px auto;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #D8C3A8,
+            transparent
+        );
+}
+
+.verse{
+    text-align:center;
+    font-style:italic;
+    line-height:1.2;
+    color:#72665C;
+}
+
+.verse2{
+    margin-top: 20px;
+    text-align:center;
+    font-style:italic;
+    line-height:1.2;
+    color:#72665C;
+}
+.reference{
+    margin-top:4px;
+    text-align:center;
+    color:#A98A63;
+}
+
+/* ==========================================
+   POEM
+========================================== */
+
+.poemPage{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.poemTitle{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    color:#6B4B33;
+    margin-bottom:35px;
+}
+
+.poemBody{
+    font-family:papyrus;
+    text-align: center;   
+    line-height:1.5;
+    color:#7e7c34;
+    font-style: oblique;
+    margin-bottom: 20px;
+}
+
+.poemSignature{
+    margin-top:50px;
+    text-align:right;
+}
+
+.poemSignature p{
+    color:#8A715A;
+    font-style:italic;
+}
+
+.poemSignature h3{
+    margin-top:8px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:20px;
+    color:#6B4B33;
+}
+
+/* ==========================================
+   PAGE NAVIGATION
+========================================== */
+
+#letterNav{
+
+    position:absolute;
+    bottom:130px;
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    padding:8px 1px;
+
+}
+
+.backPageBtn,
+.nextPageBtn{
+
+    border:none;
+    background:#C89A63;
+
+    color:#fff;
+
+    padding:8px 20px;
+
+    border-radius:999px;
+
+    font-family:"Poppins",sans-serif;
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+
+}
+
+.backPageBtn:hover,
+.nextPageBtn:hover{
+
+    background:#B88650;
+    transform:translateY(-2px);
+
+}
+/* ==========================================
+            TABLET
+========================================== */
+
+@media (max-width:992px){
+
+    .friendshipCard{
+
+        width:680px;
+        height:820px;
+
+    }
+
+    .cardCover h1{
+
+        font-size:50px;
+
+    }
+
+    .cardCover h2{
+
+        font-size:40px;
+
+    }
+
+    .cardCover p{
+
+        font-size:18px;
+
+    }
+
+    .polaroid{
+
+        width:210px;
+
+    }
+
+    .leftPage{
+
+        padding:35px 28px;
+
+    }
+
+    .rightPage .pageContent{
+
+        padding:35px 28px;
+
+    }
+
+    .letterGreeting{
+
+        font-size:32px;
+
+    }
+
+    .letterBody{
+
+        font-size:17px;
+
+        line-height:1.75;
+
+    }
+
+    .poemTitle{
+
+        font-size:30px;
+
+    }
+
+    .poemBody{
+
+        font-size:24px;
+
+    }
+
+}
+/* ==========================================
+            MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+.cardCover{
+
+    justify-content:flex-start;
+    width:361px;
+    padding-top:50px;
+    background-color: black;
+
+}
+.coverPhoto{
+
+    position:relative;
+
+    left:auto;
+
+    right:auto;
+
+    top:auto;
+
+    transform:none;
+
+    margin:0 auto 25px;
+
+}
+.polaroid{
+
+    width:170px;
+
+    padding:10px 10px 35px;
+
+}
+.coverFlowerDecoration{
+
+    width:65px;
+
+    top:10px;
+
+    right:8px;
+
+}
+.cardCover h1{
+
+    font-size:34px;
+
+    line-height:1.2;
+
+    margin-bottom:10px;
+
+    text-align:center;
+
+}
+.cardCover h2{
+
+    font-size:26px;
+
+    margin-bottom:12px;
+
+}
+.cardCover p{
+
+    font-size:15px;
+
+    margin-top:8px;
+
+    opacity:.85;
+
+}
+
+
+    .cardScene{
+
+    width:95vw;
+
+    margin:0 auto;
+
+    display:block;
+
+}
+
+    #friendshipCard{
+    display:block;
+    overflow-y:auto;
+    padding:20px 0;
+    width:100%;
+    height: 100%;
+    min-height: 90vh;
+
+}
+    .pageSpread{
+
+    height:auto;
+
+    min-height:100%;
+
+    }
+
+    .leftPage::before,
+.rightPage::before{
+
+    top:12px;
+    left:12px;
+
+    width:35px;
+    height:35px;
+
+}
+
+.leftPage,
+.rightPage{
+
+    height:auto;
+
+}
+
+    .cardCover{
+
+        padding:25px;
+
+    }
+
+    .cardCover h1{
+
+        font-size:36px;
+
+    }
+
+    .cardCover h2{
+
+        font-size:30px;
+
+    }
+
+    .cardCover p{
+
+        font-size:15px;
+
+    }
+
+    .polaroid{
+
+        width:170px;
+
+        padding:10px 10px 35px;
+
+    }
+
+    .coverFlowerDecoration{
+
+        width:70px;
+
+    }
+
+    .leftPage{
+
+        padding:18px;
+
+    }
+
+    .bibleVerse{
+
+        margin-top:15px;
+
+    }
+
+    .rightPage .pageContent{
+
+        padding:18px;
+
+    }
+    .leftPage .pageContent,
+    .rightPage .pageContent{
+
+    display:flex;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    flex-direction:column;
+    max-height:100%;
+
+}
+
+    .letterGreeting{
+
+    font-size:25px;
+    margin-bottom: 0px;
+}
+
+    .letterBody{
+
+        font-size:20px;
+        line-height:1.45;
+        margin-bottom:20px;
+        margin-top: 0px;
+    }
+
+    .letterSignature{
+        margin-top: 25px;
+        font-size:20px;
+
+}
+
+    .poemTitle{
+
+    font-size:28px;
+    margin-bottom:35px;
+
+}
+
+.poemBody{
+    text-align: center;
+    font-size:20px;
+    line-height:1.45;
+    margin-bottom:20px;
+
+}
+.poemSignature{
+    margin-top: 18px;
+    margin-bottom: 0px;
+}
+.poemSignature h3{
+    margin-top:0px;
+}
+
+#letterNav{
+    position:sticky;
+    margin-top:95px;
+    bottom:0;
+    padding:15px 0;
+
+}
+
+    .backPageBtn,
+    .nextPageBtn{
+
+        font-size:13px;
+        margin: 0px;
+        padding:6px 10px;
+
+    }
+    .scroll{
+    display: block;
+    font-family:papyrus;
+    text-align: center;
+    font-style: italic;
+    margin-top: 30px;
+    font-weight: 10px;
+    opacity: 0.8;
+}
+}

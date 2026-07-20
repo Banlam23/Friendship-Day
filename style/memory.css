@@ -1,0 +1,386 @@
+/* ==========================================
+   MEMORY PAGE
+========================================== */
+.memorySpread{
+    position:absolute;
+    inset:0;
+    background:#FFFCF8;
+    border-radius:18px;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .4s ease;
+
+}
+.memorySpread.active{
+    display: block;
+    opacity:1;
+    visibility:visible;
+}
+
+.memoryPage{
+    width:100%;
+    height:100%;
+    padding:55px;
+    position: relative;
+}
+
+.memoryPage h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:42px;
+    color:#6B4B33;
+    margin-bottom:12px;
+}
+
+.memoryPage p{
+    color:#8A715A;
+}
+
+.memoryBoard{
+    margin-top:-60px;
+    position:relative;
+    width:100%;
+    height:660px;
+}
+
+.memoryPolaroid{
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.memoryPolaroid:hover{
+
+    transform:scale(1.04);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.18);
+
+}
+
+.memoryPolaroid{
+    position:absolute;
+    width:220px;
+    background:#FFF;
+    padding:10px 10px 30px;
+    border-radius:4px;
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.18);
+}
+
+.memoryPhoto{
+    width:100%;
+    aspect-ratio:1;
+    overflow:hidden;
+    background:#EFEAE4;
+    border-radius:2px;
+}
+.memoryPhoto img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.memoryTape{
+    position:absolute;
+    top:-10px;
+    left:50%;
+    transform:translateX(-50%) rotate(3deg);
+    width:70px;
+    height:22px;
+    background:rgba(248,238,202,.75);
+    border:1px solid rgba(255,255,255,.5);
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.08);
+}
+.memoryFlower{
+    position:absolute;
+    right:70px;
+    bottom:90px;
+    width:110px;
+    opacity:.85;
+    pointer-events:none;
+}
+
+.one{
+    top:100px;
+    left:450px;
+    transform:rotate(10deg);
+    z-index: 3;
+}
+
+.two{
+    top:210px;
+    left:210px;
+    transform:rotate(-15deg);
+    z-index: 1;
+}
+
+.three{
+    top:90px;
+    right:470px;
+    transform:rotate(-5deg);
+    z-index: 2;
+}
+.four{
+    top:380px;
+    right:70px;
+    transform:rotate(-5deg);
+    z-index: 4;
+}
+.five{
+    top:400px;
+    right:440px;
+    transform:rotate(9deg);
+    z-index: 5;
+    object-fit:cover;
+}
+
+.memoryCaption{
+    margin-top:12px;
+    text-align:center;
+    font-family:"Cormorant Garamond", serif;
+    font-size:18px;
+    color:#6B4B33;
+}
+
+.memoryNavigation{
+    position:absolute;
+    left:40px;
+    bottom:35px;
+    z-index:20;
+}
+
+/* ==========================================
+   BOOK STRUCTURE
+========================================== */
+
+
+.sheet{
+    position:absolute;
+    inset:0;
+}
+
+.sheetFront,
+.sheetBack{
+    position:absolute;
+    inset:0;
+}
+.backPageBtn{
+    
+    z-index: 1;
+}
+
+/* ==========================================
+   UTILITIES
+========================================== */
+
+.hidden{
+    display:none;
+}
+/* ==========================================
+            TABLET
+========================================== */
+
+@media (max-width:992px){
+
+    .memoryPage{
+
+        padding:35px;
+
+    }
+
+    .memoryPage h2{
+
+        font-size:34px;
+
+    }
+
+    .memoryBoard{
+
+        height:560px;
+
+        margin-top:0;
+
+    }
+
+    .memoryPolaroid{
+
+        width:170px;
+
+    }
+
+    .memoryCaption{
+
+        font-size:15px;
+
+    }
+
+    /* Rearrange Photos */
+
+    /* ---------- Photos ---------- */
+
+.one{
+
+    top:20px;
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        rotate(8deg);
+
+}
+
+.two{
+
+    top:150px;
+    left:15px;
+
+    transform:rotate(-12deg);
+
+}
+
+.three{
+
+    top:150px;
+    right:15px;
+
+    transform:rotate(10deg);
+
+}
+
+.four{
+
+    top:310px;
+    left:40px;
+
+    transform:rotate(-8deg);
+
+}
+
+.five{
+
+    top:310px;
+    right:40px;
+
+    transform:rotate(8deg);
+
+}
+
+    .memoryFlower{
+
+        width:80px;
+
+        right:20px;
+        bottom:20px;
+
+    }
+
+}
+/* ==========================================
+            MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .memorySpread{
+
+        overflow-y:auto;
+
+    }
+
+    .memoryPage{
+
+        min-height:850px;
+
+        padding:20px;
+
+    }
+
+    .memoryBoard{
+
+    position:relative;
+
+    width:400px;
+
+    height:410px;
+
+    margin-top:20px;
+
+}
+
+    .memoryPolaroid{
+
+        width:150px;
+
+        position:absolute;
+
+    }
+
+    .memoryCaption{
+
+        font-size:13px;
+
+    }
+
+    /* ---------- Photos ---------- */
+
+    .one{
+
+        top:20px;
+        left:50%;
+
+        transform:
+            translateX(-50%)
+            rotate(8deg);
+
+    }
+
+    .two{
+
+        top:180px;
+        left:10px;
+
+        transform:rotate(-10deg);
+
+    }
+
+    .three{
+
+        top:180px;
+        right:10px;
+
+        transform:rotate(10deg);
+
+    }
+
+    .four{
+
+        top:400px;
+        left:35px;
+
+        transform:rotate(-8deg);
+
+    }
+
+    .five{
+
+        top:400px;
+        right:35px;
+
+        transform:rotate(8deg);
+
+    }
+
+    .memoryFlower{
+
+        width:65px;
+
+        right:15px;
+
+        bottom:15px;
+
+    }
+
+}

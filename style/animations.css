@@ -1,0 +1,21 @@
+@keyframes flowerFloat{
+
+    0%{
+
+        transform:rotate(var(--rotate)) translateY(0);
+
+    }
+
+    50%{
+
+        transform:rotate(var(--rotate)) translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:rotate(var(--rotate)) translateY(0);
+
+    }
+
+}
