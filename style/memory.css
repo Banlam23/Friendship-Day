@@ -136,7 +136,12 @@
     z-index: 5;
     object-fit:cover;
 }
-
+.info{
+    text-align:center;
+    font-family:"Cormorant Garamond", serif;
+    color:#000000;
+    font-style: oblique;
+}
 .memoryCaption{
     margin-top:12px;
     text-align:center;
@@ -268,14 +273,11 @@
 
 }
 
-    .memoryFlower{
-
-        width:80px;
-
-        right:20px;
-        bottom:20px;
-
-    }
+.memoryFlower{
+    width:80px;
+    right:20px;
+    bottom:20px;
+}
 
 }
 /* ==========================================
@@ -284,103 +286,71 @@
 
 @media (max-width:768px){
 
-    .memorySpread{
-
-        overflow-y:auto;
-
-    }
-
-    .memoryPage{
-
-        min-height:850px;
-
-        padding:20px;
-
-    }
-
-    .memoryBoard{
-
-    position:relative;
-
-    width:400px;
-
-    height:410px;
-
-    margin-top:20px;
-
+.memorySpread{
+    overflow-x:auto;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
 }
 
-    .memoryPolaroid{
+.memoryPage{
+    min-height:850px;
+    padding:20px;
+}
 
-        width:150px;
+.memoryBoard{
+    position:relative;
+    width:340px;
+    height:620px;
+    margin-top:20px;
+}
 
-        position:absolute;
+.memoryPolaroid{
+    width:150px;
+    position:absolute;
+}
+.surpriseInfo{
+    font-size: 13px;
+}
 
+/* ---------- Photos ---------- */
+
+.one{
+    top:20px;
+    left:50%;
+    transform:
+        translateX(-50%)
+        rotate(-6deg);
     }
 
-    .memoryCaption{
+.two{
+    top:180px;
+    left:10px;
+    transform:rotate(12deg);
+}
 
-        font-size:13px;
+.three{
+    top:180px;
+    right:10px;
+    transform:rotate(-10deg);
+}
 
-    }
+.four{
+    top:360px;
+    left:15px;
+    transform:rotate(-8deg);
+}
 
-    /* ---------- Photos ---------- */
+.five{
+    top:400px;
+    right:15px;
+    transform:rotate(8deg);
+}
 
-    .one{
-
-        top:20px;
-        left:50%;
-
-        transform:
-            translateX(-50%)
-            rotate(8deg);
-
-    }
-
-    .two{
-
-        top:180px;
-        left:10px;
-
-        transform:rotate(-10deg);
-
-    }
-
-    .three{
-
-        top:180px;
-        right:10px;
-
-        transform:rotate(10deg);
-
-    }
-
-    .four{
-
-        top:400px;
-        left:35px;
-
-        transform:rotate(-8deg);
-
-    }
-
-    .five{
-
-        top:400px;
-        right:35px;
-
-        transform:rotate(8deg);
-
-    }
-
-    .memoryFlower{
-
-        width:65px;
-
-        right:15px;
-
-        bottom:15px;
-
+.memoryFlower{
+    width:65px;
+    right:15px;
+    bottom:65px;
+    transform: rotate(9deg);
     }
 
 }

@@ -26,8 +26,15 @@ export function initNavigation() {
 
         letterPage.classList.remove("active");
         letterPage.style.display = "none";
+
         memoryPage.style.display = "block";
         memoryPage.classList.add("active");
+
+        // Mobile: always start at the beginning
+        memoryPage.scrollLeft = 0;
+
+        const gallery = memoryPage.querySelector(".memoryGallery");
+        if (gallery) gallery.scrollLeft = 0;
 
     });
 
@@ -39,6 +46,11 @@ export function initNavigation() {
 
         memoryPage.classList.remove("active");
         memoryPage.style.display = "none";
+
+        memoryPage.scrollLeft = 0;
+
+        const gallery = memoryPage.querySelector(".memoryGallery");
+        if (gallery) gallery.scrollLeft = 0;
 
         letterPage.style.display = "flex";
         letterPage.classList.add("active");

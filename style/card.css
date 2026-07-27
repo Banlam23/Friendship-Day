@@ -694,206 +694,157 @@
 @media (max-width:768px){
 
 .cardCover{
-
     justify-content:flex-start;
     width:361px;
     padding-top:50px;
     background-color: black;
-
 }
 .coverPhoto{
-
     position:relative;
-
     left:auto;
-
     right:auto;
-
-    top:auto;
-
+    top:15%;
     transform:none;
-
     margin:0 auto 25px;
+    margin-bottom: 135px;
 
 }
 .polaroid{
-
     width:170px;
-
     padding:10px 10px 35px;
-
 }
 .coverFlowerDecoration{
-
     width:65px;
-
     top:10px;
-
     right:8px;
 
 }
 .cardCover h1{
-
     font-size:34px;
-
     line-height:1.2;
-
     margin-bottom:10px;
-
     text-align:center;
-
 }
 .cardCover h2{
-
     font-size:26px;
-
     margin-bottom:12px;
-
 }
 .cardCover p{
-
     font-size:15px;
-
     margin-top:8px;
-
     opacity:.85;
-
 }
-
-
-    .cardScene{
-
+.cardScene{
     width:95vw;
-
     margin:0 auto;
-
-    display:block;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-    #friendshipCard{
-    display:block;
-    overflow-y:auto;
-    padding:20px 0;
+#friendshipCard{
     width:100%;
-    height: 100%;
-    min-height: 90vh;
-
+    height:100%;
+    overflow:hidden;
 }
-    .pageSpread{
 
-    height:auto;
+.pageSpread{
+    display:flex;
+    width:100%;
+    height:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+}
 
-    min-height:100%;
-
-    }
-
-    .leftPage::before,
+.leftPage::before,
 .rightPage::before{
 
     top:12px;
     left:12px;
-
     width:35px;
     height:35px;
-
+    min-width:100%;
+    scroll-snap-align:start;
 }
 
 .leftPage,
 .rightPage{
-
-    height:auto;
-
+    flex:0 0 100%;
+    width:100%;
+    min-width:100%;
+    height:100%;
+    scroll-snap-align:start;
+    margin-top: 25px;
 }
 
-    .cardCover{
-
-        padding:25px;
-
+.cardCover{
+    padding:25px;
     }
 
-    .cardCover h1{
+.cardCover h1{
+    font-size:36px;
+}
 
-        font-size:36px;
+.cardCover h2{
+    font-size:30px;
+}
 
-    }
+.cardCover p{
+    font-size:15px;
+}
 
-    .cardCover h2{
+.polaroid{
+    width:170px;
+    padding:10px 10px 35px;
+}
 
-        font-size:30px;
+.coverFlowerDecoration{
+    width:70px;
+}
 
-    }
+.leftPage{
+    padding:18px;
+}
 
-    .cardCover p{
+.bibleVerse{
+    margin-top:15px;
+}
 
-        font-size:15px;
+.rightPage .pageContent{
+    padding:18px;
+}
 
-    }
-
-    .polaroid{
-
-        width:170px;
-
-        padding:10px 10px 35px;
-
-    }
-
-    .coverFlowerDecoration{
-
-        width:70px;
-
-    }
-
-    .leftPage{
-
-        padding:18px;
-
-    }
-
-    .bibleVerse{
-
-        margin-top:15px;
-
-    }
-
-    .rightPage .pageContent{
-
-        padding:18px;
-
-    }
-    .leftPage .pageContent,
-    .rightPage .pageContent{
-
+.leftPage .pageContent,
+.rightPage .pageContent{
     display:flex;
+    flex-direction:column;
+    height:100%;
     overflow-y:auto;
     -webkit-overflow-scrolling:touch;
-    flex-direction:column;
-    max-height:100%;
-
 }
 
-    .letterGreeting{
-
+.letterGreeting{
     font-size:25px;
     margin-bottom: 0px;
 }
 
-    .letterBody{
-
+.letterBody{
         font-size:20px;
         line-height:1.45;
         margin-bottom:20px;
         margin-top: 0px;
     }
 
-    .letterSignature{
-        margin-top: 25px;
-        font-size:20px;
+.letterSignature{
+    margin-top: 25px;
+    font-size:20px;
 
 }
 
-    .poemTitle{
-
+.poemTitle{
     font-size:28px;
     margin-bottom:35px;
 
@@ -913,7 +864,9 @@
 .poemSignature h3{
     margin-top:0px;
 }
-
+.boxLetter{
+    margin-top: 130px;
+}
 #letterNav{
     position:sticky;
     margin-top:95px;
@@ -922,15 +875,14 @@
 
 }
 
-    .backPageBtn,
-    .nextPageBtn{
-
+.backPageBtn,
+.nextPageBtn{
         font-size:13px;
         margin: 0px;
         padding:6px 10px;
-
     }
-    .scroll{
+
+.scroll{
     display: block;
     font-family:papyrus;
     text-align: center;
