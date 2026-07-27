@@ -687,6 +687,7 @@
     }
 
 }
+
 /* ==========================================
             MOBILE
 ========================================== */
@@ -751,17 +752,22 @@
 .pageSpread{
     display:flex;
     width:100%;
-    height:100%;
+    height:100dvh;
     overflow-x:auto;
     overflow-y:hidden;
     scroll-snap-type:x mandatory;
     scroll-behavior:smooth;
     -webkit-overflow-scrolling:touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.pageSpread::-webkit-scrollbar{
+    display:none;
 }
 
 .leftPage::before,
 .rightPage::before{
-
     top:12px;
     left:12px;
     width:35px;
@@ -775,14 +781,14 @@
     flex:0 0 100%;
     width:100%;
     min-width:100%;
-    height:100%;
+    min-height:100dvh;
     scroll-snap-align:start;
-    margin-top: 25px;
+    box-sizing:border-box;
 }
 
 .cardCover{
     padding:25px;
-    }
+}
 
 .cardCover h1{
     font-size:36px;
@@ -821,7 +827,8 @@
 .rightPage .pageContent{
     display:flex;
     flex-direction:column;
-    height:100%;
+    min-height:100%;
+    padding-bottom:40px;
     overflow-y:auto;
     -webkit-overflow-scrolling:touch;
 }
@@ -836,7 +843,7 @@
         line-height:1.45;
         margin-bottom:20px;
         margin-top: 0px;
-    }
+}
 
 .letterSignature{
     margin-top: 25px;
