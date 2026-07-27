@@ -100,7 +100,7 @@
     position:absolute;
     z-index: 10;
     bottom:110px;
-    right:60px;
+    right:30px;
 
     font-family:"Poppins",sans-serif;
 
@@ -148,4 +148,12 @@
 
     }
 
+}
+@media (max-width:768px){
+    #doracakeHint{
+        font-size: 15px;
+        font-style: italic;
+        right: 9px;
+        font-weight: bold;
+    }   
 }
