@@ -750,7 +750,10 @@
 }
 
 /* ---------- LETTER ---------- */
-
+.divider{
+    margin-top:0px;
+    padding-top: 0px;
+}
 .pageSpread{
     display:flex;
     width:100%;
@@ -771,7 +774,6 @@
     flex:0 0 100%;
     width:100%;
     height:100%;
-    padding:18px;
     overflow-y:auto;
     box-sizing:border-box;
     scroll-snap-align:start;
@@ -784,10 +786,6 @@
     min-height:max-content;
 }
 
-.rightPage .pageContent{
-    padding:0;
-}
-
 .letterGreeting{
     font-size:26px;
 }
@@ -795,6 +793,7 @@
 .letterBody{
     font-size:18px;
     line-height:1.6;
+    margin-bottom:30px;
 }
 
 .poemTitle{
@@ -819,10 +818,17 @@
     font-size:13px;
     padding:8px 14px;
 }
-
+.poemSignature{
+    margin-bottom: 107px;
+    margin-top: 0px;
+}
 .scroll{
     display:block;
-    margin-top:24px;
+    font-size: 16px;
+    margin-top:26px;
     text-align:center;
+    text-shadow: #6B4B33;
+    font-style: italic;
+    font-family:Baskerville; ;
 }
 }

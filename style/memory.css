@@ -224,7 +224,7 @@
 
     /* Rearrange Photos */
 
-    /* ---------- Photos ---------- */
+/* ---------- Photos ---------- */
 
 .one{
 
@@ -233,41 +233,40 @@
 
     transform:
         translateX(-50%)
-        rotate(8deg);
+        rotate(15deg);
 
 }
 
 .two{
 
     top:150px;
-    left:15px;
+    left:-5px;
 
-    transform:rotate(-12deg);
+    transform:rotate(-18deg);
 
 }
 
 .three{
 
-    top:150px;
-    right:15px;
+    top:200px;
+    right:10px;
 
-    transform:rotate(10deg);
+    transform:rotate(-7deg);
 
 }
 
 .four{
 
-    top:310px;
-    left:40px;
-
-    transform:rotate(-8deg);
+    top:320px;
+    left:10px;
+    transform:rotate(4deg);
 
 }
 
 .five{
 
-    top:310px;
-    right:40px;
+    top:380px;
+    right:30px;
 
     transform:rotate(8deg);
 
@@ -317,5 +316,55 @@
     width:65px;
     right:15px;
     bottom:15px;
+}
+/* ---------- Photos ---------- */
+
+.one{
+
+    top:20px;
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        rotate(15deg);
+
+}
+
+.two{
+
+    top:150px;
+    left:-5px;
+
+    transform:rotate(-18deg);
+
+}
+
+.three{
+
+    top:200px;
+    right:10px;
+
+    transform:rotate(-7deg);
+
+}
+
+.four{
+
+    top:320px;
+    left:10px;
+    transform:rotate(4deg);
+
+}
+
+.five{
+
+    top:380px;
+    right:30px;
+
+    transform:rotate(8deg);
+
+}
+.memoryNavigation{
+    margin-top: -60px;
 }
 }
