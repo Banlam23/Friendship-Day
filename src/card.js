@@ -11,7 +11,11 @@ export function initCard() {
         
 
         setTimeout(() => {
+            const letter = document.querySelector("#letterPage");
+            const memory = document.querySelector("#memoryPage");
 
+            if (letter) letter.scrollTop = 0;
+            if (memory) memory.scrollTop = 0;
             card.classList.add("opened");
 
         }, 400);

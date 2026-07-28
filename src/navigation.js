@@ -31,6 +31,7 @@ export function initNavigation() {
         memoryPage.classList.add("active");
 
         // Mobile: always start at the beginning
+        memoryPage.scrollTop = 0;
         memoryPage.scrollLeft = 0;
 
         const gallery = memoryPage.querySelector(".memoryGallery");
@@ -47,7 +48,10 @@ export function initNavigation() {
         memoryPage.classList.remove("active");
         memoryPage.style.display = "none";
 
+        memoryPage.scrollTop = 0;
         memoryPage.scrollLeft = 0;
+
+        letterPage.scrollTop = 0;
 
         const gallery = memoryPage.querySelector(".memoryGallery");
         if (gallery) gallery.scrollLeft = 0;

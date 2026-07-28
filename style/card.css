@@ -308,7 +308,7 @@
     display:none;
     background:#FFFCF8;
     border-radius:18px;
-    overflow:hidden;
+    overflow:auto;
 
 }
 #letterPage{
@@ -694,61 +694,62 @@
 
 @media (max-width:768px){
 
-.cardCover{
-    justify-content:flex-start;
-    width:361px;
-    padding-top:50px;
-    background-color: black;
-}
-.coverPhoto{
-    position:relative;
-    left:auto;
-    right:auto;
-    top:15%;
-    transform:none;
-    margin:0 auto 25px;
-    margin-bottom: 135px;
+/* ---------- CARD ---------- */
 
-}
-.polaroid{
-    width:170px;
-    padding:10px 10px 35px;
-}
-.coverFlowerDecoration{
-    width:65px;
-    top:10px;
-    right:8px;
-
-}
-.cardCover h1{
-    font-size:34px;
-    line-height:1.2;
-    margin-bottom:10px;
-    text-align:center;
-}
-.cardCover h2{
-    font-size:26px;
-    margin-bottom:12px;
-}
-.cardCover p{
-    font-size:15px;
-    margin-top:8px;
-    opacity:.85;
-}
 .cardScene{
     width:100vw;
-    height:100dvh;
-    margin:0;
+    height:100vh;
+}
+
+.friendshipCard{
+    width:100vw;
+    height:100vh;
+}
+
+.book,
+.cardInside{
+    width:100%;
+    height:100%;
+}
+
+/* ---------- COVER ---------- */
+
+.cardCover{
+    inset:0;
+    padding:24px 18px;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
 }
 
-#friendshipCard{
-    width:100%;
-    height:100dvh;
-    overflow:hidden;
+.coverPhoto{
+    margin:0 0 24px;
+    transform:none;
 }
+
+.polaroid{
+    width:170px;
+}
+
+.coverFlowerDecoration{
+    width:65px;
+}
+
+.cardCover h1{
+    font-size:34px;
+    text-align:center;
+}
+
+.cardCover h2{
+    font-size:26px;
+}
+
+.cardCover p{
+    font-size:15px;
+}
+
+/* ---------- LETTER ---------- */
 
 .pageSpread{
     display:flex;
@@ -757,142 +758,71 @@
     overflow-x:auto;
     overflow-y:hidden;
     scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
     -webkit-overflow-scrolling:touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width:none;
 }
 
 .pageSpread::-webkit-scrollbar{
     display:none;
 }
 
-.leftPage::before,
-.rightPage::before{
-    top:12px;
-    left:12px;
-    width:35px;
-    height:35px;
-    min-width:100%;
-    scroll-snap-align:start;
-}
-
 .leftPage,
 .rightPage{
     flex:0 0 100%;
     width:100%;
-    min-width:100%;
-    height:100dvh;
-    scroll-snap-align:start;
+    height:100%;
+    padding:18px;
+    overflow-y:auto;
     box-sizing:border-box;
-}
-
-.cardCover{
-    padding:25px;
-}
-
-.cardCover h1{
-    font-size:36px;
-}
-
-.cardCover h2{
-    font-size:30px;
-}
-
-.cardCover p{
-    font-size:15px;
-}
-
-.polaroid{
-    width:170px;
-    padding:10px 10px 35px;
-}
-
-.coverFlowerDecoration{
-    width:70px;
-}
-
-.leftPage{
-    padding:18px;
-}
-
-.bibleVerse{
-    margin-top:15px;
-}
-
-.rightPage .pageContent{
-    padding:18px;
+    scroll-snap-align:start;
 }
 
 .leftPage .pageContent,
 .rightPage .pageContent{
     display:flex;
     flex-direction:column;
-    min-height:100%;
-    padding-bottom:40px;
+    min-height:max-content;
+}
+
+.rightPage .pageContent{
+    padding:0;
 }
 
 .letterGreeting{
-    font-size:25px;
-    margin-bottom: 0px;
+    font-size:26px;
 }
 
 .letterBody{
-        font-size:20px;
-        line-height:1.45;
-        margin-bottom:20px;
-        margin-top: 0px;
-}
-
-.letterSignature{
-    margin-top: 25px;
-    font-size:20px;
-
+    font-size:18px;
+    line-height:1.6;
 }
 
 .poemTitle{
     font-size:28px;
-    margin-bottom:35px;
-
 }
 
 .poemBody{
-    text-align: center;
-    font-size:20px;
-    line-height:1.45;
-    margin-bottom:20px;
+    font-size:18px;
+    line-height:1.6;
+}
 
-}
-.poemSignature{
-    margin-top: 18px;
-    margin-bottom: 0px;
-}
-.poemSignature h3{
-    margin-top:0px;
-}
-.boxLetter{
-    margin-top: 130px;
-}
 #letterNav{
     position:relative;
-    margin-top:40px;
-    padding:15px 0;
+    margin-top:32px;
+    margin-bottom:20px;
 }
+
+/* ---------- BUTTONS ---------- */
 
 .backPageBtn,
 .nextPageBtn{
-        font-size:13px;
-        margin: 0px;
-        padding:6px 10px;
-    }
+    font-size:13px;
+    padding:8px 14px;
+}
 
 .scroll{
-    display: block;
-    font-family:papyrus;
-    text-align: center;
-    font-style: italic;
-    margin-top: 30px;
-    font-weight: 10px;
-    opacity: 0.8;
+    display:block;
+    margin-top:24px;
+    text-align:center;
 }
 }
