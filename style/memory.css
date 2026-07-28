@@ -285,20 +285,32 @@
 @media (max-width:768px){
 
 .memorySpread{
-    margin-top:30px;
-    margin-bottom: 30px;
+    display:block;
+    position:absolute;
+    inset:0;
+
     overflow-y:auto;
     overflow-x:hidden;
+
+    -webkit-overflow-scrolling:touch;
 }
 
 .memoryPage{
-    padding:20px;
-    height:1000px;
+    display:flex;
+    flex-direction:column;
+
+    min-height:max-content;
+
+    padding:50px 20px 40px;
+    box-sizing:border-box;
 }
 
 .memoryBoard{
+    flex-shrink:0;
+
     width:340px;
     height:620px;
+
     margin:20px auto;
 }
 
@@ -308,10 +320,12 @@
 
 .memoryNavigation{
     position:relative;
+
+    margin-top:30px;
+    margin-bottom:30px;
+
     left:auto;
     bottom:auto;
-    margin-top:40px;
-    margin-bottom:30px;
 }
 
 .memoryFlower{
