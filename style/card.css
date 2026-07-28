@@ -736,8 +736,9 @@
     opacity:.85;
 }
 .cardScene{
-    width:95vw;
-    margin:0 auto;
+    width:100vw;
+    height:100dvh;
+    margin:0;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -745,14 +746,14 @@
 
 #friendshipCard{
     width:100%;
-    height:100%;
+    height:100dvh;
     overflow:hidden;
 }
 
 .pageSpread{
     display:flex;
     width:100%;
-    height:100dvh;
+    height:100%;
     overflow-x:auto;
     overflow-y:hidden;
     scroll-snap-type:x mandatory;
@@ -781,7 +782,7 @@
     flex:0 0 100%;
     width:100%;
     min-width:100%;
-    min-height:100dvh;
+    height:100dvh;
     scroll-snap-align:start;
     box-sizing:border-box;
 }
