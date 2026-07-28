@@ -285,13 +285,15 @@
 @media (max-width:768px){
 
 .memorySpread{
+    margin-top:30px;
+    margin-bottom: 30px;
     overflow-y:auto;
     overflow-x:hidden;
 }
 
 .memoryPage{
     padding:20px;
-    min-height:100%;
+    height:1000px;
 }
 
 .memoryBoard{
@@ -315,7 +317,8 @@
 .memoryFlower{
     width:65px;
     right:15px;
-    bottom:15px;
+    bottom:135px;
+    transform:rotate(18deg);
 }
 /* ---------- Photos ---------- */
 
