@@ -1,0 +1,63 @@
+/* ==========================================
+   FLOATING SPARKLES
+========================================== */
+
+#sparkleContainer{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:99999999;
+
+}
+
+.sparkle{
+    position:absolute;
+    border-radius:50%;
+    width: 3px;
+    height: 3px;
+    background: #FFD54A;
+    opacity: .75;
+    box-shadow:
+        0 0 8px rgba(255,213,74,.9),
+        0 0 18px rgba(255,190,60,.75),
+        0 0 28px rgba(255,160,40,.45);
+    animation:floatSparkle linear infinite;
+}
+@keyframes floatSparkle{
+
+    0%{
+
+        transform:
+            translateY(-10vh)
+            translateX(0);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:.35;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(50vh)
+            translateX(12px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(110vh)
+            translateX(-10px);
+
+        opacity:0;
+
+    }
+
+}

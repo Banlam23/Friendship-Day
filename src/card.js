@@ -2,14 +2,22 @@ export function initCard() {
 
     const cover = document.querySelector(".cardCover");
     const card = document.querySelector(".friendshipCard");
+    const pageFlipSound = document.getElementById("pageFlipSound");
+
+    function playPageFlip() {
+
+    if (!pageFlipSound) return;
+        pageFlipSound.currentTime = 0;
+        pageFlipSound.volume = 0.14;
+        pageFlipSound.play().catch(() => {});
+}
 
     if (!cover || !card) return;
 
     cover.addEventListener("click", () => {
 
+        playPageFlip();
         cover.classList.add("opened");
-        
-
         setTimeout(() => {
             const letter = document.querySelector("#letterPage");
             const memory = document.querySelector("#memoryPage");

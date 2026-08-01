@@ -1,5 +1,5 @@
-import { playIntroMusic } from "./music.js";
 import { hideLoading } from "./loading.js";
+import { playMusic } from "./music.js";
 
 export function initIntro() {
 
@@ -9,9 +9,9 @@ export function initIntro() {
 
     if (!introScreen || !startButton || !loading) return;
 
-    startButton.addEventListener("click", () => {
+    startButton.addEventListener("click", async () => {
 
-        playIntroMusic();
+        await playMusic();
 
         introScreen.style.opacity = "0";
         introScreen.style.pointerEvents = "none";
@@ -19,7 +19,6 @@ export function initIntro() {
         setTimeout(() => {
 
             introScreen.style.display = "none";
-
             loading.style.display = "flex";
 
             hideLoading();

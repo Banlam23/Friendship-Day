@@ -1,70 +1,24 @@
-let introMusic;
-let homeMusic;
-let musicSwitched = false;
+let bgMusic = null;
+let musicStarted = false;
 
 export function initMusic() {
+    bgMusic = document.getElementById("bgMusic");
 
-    introMusic = document.getElementById("introMusic");
-    homeMusic = document.getElementById("homeMusic");
+    if (!bgMusic) return;
 
-    introMusic.volume = 1;
-    homeMusic.volume = 0;
+    bgMusic.loop = true;
+    bgMusic.volume = 0.5;
 }
 
-export function playIntroMusic() {
+export async function playMusic() {
 
-    introMusic.play();
-}
+    if (!bgMusic || musicStarted) return;
 
-export function switchToHomeMusic(delay = 0) {
-
-    if (musicSwitched) return;
-    musicSwitched = true;
-
-    homeMusic.volume = 0;
-    console.log("About to play", homeMusic);
-
-homeMusic.currentTime = 0;
-homeMusic.volume = 0;
-
-homeMusic.play()
-.then(() => console.log("✅ Card music started"))
-.catch(err => console.error("❌", err));
-
-setTimeout(() => {
-    console.log(
-        "paused:", homeMusic.paused,
-        "currentTime:", homeMusic.currentTime,
-        "volume:", homeMusic.volume
-    );
-}, 1000);
-
-    setTimeout(() => {
-
-        let fade = 0;
-
-        const duration = 5000;
-        const intervalTime = 50;
-        const step = intervalTime / duration;
-
-        const interval = setInterval(() => {
-
-            fade += step;
-
-            introMusic.volume = Math.max(0, 1 - fade);
-            homeMusic.volume = Math.min(1, fade);
-
-            if (fade >= 1) {
-
-                clearInterval(interval);
-
-                introMusic.pause();
-                introMusic.currentTime = 0;
-
-            }
-
-        }, intervalTime);
-
-    }, delay);
+    try {
+        await bgMusic.play();
+        musicStarted = true;
+    } catch (err) {
+        console.error("Unable to play music:", err);
+    }
 
 }

@@ -5,8 +5,7 @@ import { initNavigation } from "./navigation.js";
 import { initGift } from "./gift.js";
 import { initMusic } from "./music.js";
 import { initIntro } from "./intro.js";
-
-import "./character.js";
+import { initSparkles } from "./sparkles.js";
 
 initMusic();
 initIntro();
@@ -15,3 +14,4 @@ initEnvelope();
 initCard();
 initNavigation();
 initGift();
+initSparkles();

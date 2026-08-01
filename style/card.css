@@ -435,6 +435,7 @@
     font-family:"Cormorant Garamond",serif;
     font-size:38px;
     color:#6B4B33;
+    font-weight: bold;
 }
 
 .letterLine{
@@ -450,15 +451,14 @@
 }
 
 .letterBody{
-    font-family: Baskerville;
+    font-family: Libre Baskerville;
     font-style: italic;
     width:100%;
     margin-top:18px;
     font-size:19px;
     line-height:1.85;
-    text-align:left;
+    text-align: center;   
     color:#655A4F;
-    margin-bottom: 120px;
 }
 
 .letterFooter{
@@ -493,7 +493,7 @@
 .divider{
     width:120px;
     height:1px;
-    margin:15px auto;
+    margin:30px auto;
     background:
         linear-gradient(
             90deg,
@@ -541,11 +541,11 @@
 }
 
 .poemBody{
-    font-family:papyrus;
+    font-family:Dancing Script;
+    font-weight: 100;
     text-align: center;   
     line-height:1.5;
     color:#7e7c34;
-    font-style: oblique;
     margin-bottom: 20px;
 }
 

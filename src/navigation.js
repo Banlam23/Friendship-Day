@@ -44,7 +44,6 @@ export function initNavigation() {
     ----------------------------- */
 
     backBtn.addEventListener("click", () => {
-
         memoryPage.classList.remove("active");
         memoryPage.style.display = "none";
 
