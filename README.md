@@ -34,4 +34,4 @@ Every animation, transition, and visual effect was carefully designed to express
 This project has reached its final version and serves as a finished personal portfolio piece and a memorable Friendship Day gift.
 
 - A Note
-"Remember, you matter. God has a purpose for you. Until we meet again! 🌸"
+"Remember, you matter. God has a purpose for you."
